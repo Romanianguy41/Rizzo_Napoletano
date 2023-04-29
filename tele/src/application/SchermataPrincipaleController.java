@@ -57,7 +57,7 @@ public class SchermataPrincipaleController
 	{
 		double numero = 0.4141;
 		boolean inserito = true;	
-		do {
+		//do {
 			try
 			{
 				numero = Double.parseDouble(testoDaEstrarre.getText());
@@ -69,7 +69,7 @@ public class SchermataPrincipaleController
 				alert.showAndWait();
 				testoDaEstrarre.clear();
 			}
-		}while(inserito);
+		//}while(inserito);
 		
 		return numero;
 	}
