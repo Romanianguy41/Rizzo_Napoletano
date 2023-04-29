@@ -15,8 +15,6 @@ import javafx.stage.Stage;
 public class graficiController {
 
 	private Stage stage;
-    private Scene scene;
-    private Parent root;
 	
     @FXML
     private Button back;
@@ -29,8 +27,7 @@ public class graficiController {
 
     @FXML
     void back(ActionEvent event) throws IOException {
-      
-
+    
   	  stage = (Stage)((Node)event.getSource()).getScene().getWindow();
   	  stage.close();
 
