@@ -45,14 +45,6 @@ public class ControllerPopUp {
     	{
     		try 
     		{
-    			int peso = Integer.parseInt(this.peso.getText());
-    			while(peso < 0)
-    			{
-    				Alert errore = new Alert(Alert.AlertType.ERROR, "Inserire un valore positivo");
-    	    		errore.showAndWait();
-    	    		this.peso.clear();
-    	    		peso = Integer.parseInt(this.peso.getText());
-    			}
     			Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
     	    	stage.close();
     		}
@@ -69,9 +61,9 @@ public class ControllerPopUp {
      * 
      * @return valore del peso scritto
      */
-    public int getPeso() 
+    public double getPeso() 
     {
-        int peso = Integer.parseInt(this.peso.getText());
+        double peso = Double.parseDouble(this.peso.getText());
         return peso;
     }
 }
