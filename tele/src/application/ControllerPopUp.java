@@ -29,7 +29,7 @@ public class ControllerPopUp {
     }
     
     /**
-     * Metodo per recuperare il peso dal textFild il peso ed assicurarsi che sia un numero
+     * Metodo per recuperare il peso dal textField il peso ed assicurarsi che sia un numero
      * @param event
      */
     @FXML
