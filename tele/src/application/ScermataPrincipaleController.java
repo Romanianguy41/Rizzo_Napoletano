@@ -11,12 +11,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class ScermataPrincipaleController {
+public class ScermataPrincipaleController 
+{
 	@FXML
 	TextField guadagno;
 	@FXML
@@ -29,7 +29,8 @@ public class ScermataPrincipaleController {
 	Button btnCalcola;
 
 	@FXML
-	void initialize() {
+	void initialize() 
+	{
 
 	}
 
@@ -49,6 +50,7 @@ public class ScermataPrincipaleController {
 		{
 			MemoriaComune.poli.add(apriPopUp());
 		}
+		apriGrafici(event);
 	}
 
 	double getNumeroDouble(TextField testoDaEstrarre) 
@@ -89,7 +91,7 @@ public class ScermataPrincipaleController {
 		} while (numero < 0);
 		return numero;
 	}
-
+	
 	Double apriPopUp() throws IOException 
 	{
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("popUp.fxml"));
@@ -102,5 +104,15 @@ public class ScermataPrincipaleController {
 		double pesoCollegamento = ((ControllerPopUp) loader.getController()).getPeso();
 		return pesoCollegamento;
 	}
-
+	
+	void apriGrafici(Event event) throws IOException
+	{
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("grafici.fxml"));
+    	AnchorPane root = (AnchorPane)loader.load();
+    	Stage stage = new Stage();
+    	stage.initStyle(StageStyle.TRANSPARENT);
+    	stage.initModality(Modality.APPLICATION_MODAL);
+    	stage.setScene(new Scene(root));
+    	stage.showAndWait();
+	}
 }
