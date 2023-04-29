@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.Effect;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -38,24 +39,37 @@ public class SchermataPrincipaleController
 	void calcola(ActionEvent event) throws IOException
 	{
 		//double pesoCollegamento = apriPopUp();
-		MemoriaComune.guadagno = getNumeroDouble(this.guadagno);
-		MemoriaComune.valoreMassimo = getNumeroDouble(this.valoreMassimo);
+		MemoriaComune.guadagno = getNumeroDouble(guadagno);
+		if(MemoriaComune.guadagno == null)
+		{return;}
+		MemoriaComune.valoreMassimo = getNumeroDouble(valoreMassimo);
+		if(MemoriaComune.valoreMassimo == null)
+		{return;}
 		int numeroZeri = getNumeroInteger(this.numeroZeri);
 		int numeroPoli = getNumeroInteger(this.numeroPoli);
 		for (int i = 0; i < numeroZeri; i++)
 		{
+			MemoriaComune.chiamata = "zero";
+			MemoriaComune.numero = i+1;
 			MemoriaComune.zeri.add(apriPopUp());
 		}
 		for (int i = 0; i < numeroPoli; i++)
 		{
+			MemoriaComune.chiamata = "polo";
+			MemoriaComune.numero = i+1;
 			MemoriaComune.poli.add(apriPopUp());
 		}
+		guadagno.clear();
+		valoreMassimo.clear();
+		this.numeroPoli.clear();
+		this.numeroZeri.clear();
 		apriGrafici(event);
+		
 	}
 
 	double getNumeroDouble(TextField testoDaEstrarre) 
 	{
-		double numero = 0.4141;
+		Double numero = null;
 		boolean inserito = true;	
 		//do {
 			try

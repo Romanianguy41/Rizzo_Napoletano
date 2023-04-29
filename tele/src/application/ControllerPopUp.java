@@ -25,7 +25,7 @@ public class ControllerPopUp {
     @FXML
     void initialize()
     {
-    	
+    	testo.setText("Inserisci il "+ MemoriaComune.numero + "° "+ MemoriaComune.chiamata );
     }
     
     /**
