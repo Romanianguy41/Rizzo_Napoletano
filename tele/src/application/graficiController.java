@@ -37,7 +37,7 @@ public class graficiController {
     	return y;
     }
     
-    double valoreNumeratore(double x)
+    double valoreCalcolato(double x)
     {
     	Double numeratore = null;
     	
@@ -55,14 +55,6 @@ public class graficiController {
     	
     	
     	return numeratore;
-    }
-    
-    double valoreDenominatore()
-    {
-    	double denominatore = 0;
-    	
-    	
-    	return denominatore;
     }
 
 }
