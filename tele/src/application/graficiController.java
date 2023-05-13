@@ -46,7 +46,7 @@ public class graficiController {
     {
     	Double numeratore = null;
     	
-    	numeratore = numeri.get(0);
+    	numeratore = calcolaReciproco(numeri.get(0), x);
     	
     	for(int i = 1; i < numeri.size(); i++)
     	{
