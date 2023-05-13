@@ -31,23 +31,18 @@ public class graficiController {
 
     }
     
-    double puntoY()
+    double puntoY(double x)
     {
     	double y = 0;
-    	double x = 0;
-    	y = Math.log(MemoriaComune.guadagno)*(valoreCalcolato(x, MemoriaComune.zeri)/ valoreCalcolato(x, MemoriaComune.poli));
-    	
-    	
-    	
+    	y = Math.log(MemoriaComune.guadagno)*(valoreCalcolato(x, MemoriaComune.zeri) 
+    			/ valoreCalcolato(x, MemoriaComune.poli));
     	return y;
     }
     
     double valoreCalcolato(double x, ArrayList<Double> numeri)
     {
     	Double numeratore = null;
-    	
     	numeratore = calcolaReciproco(numeri.get(0), x);
-    	
     	for(int i = 1; i < numeri.size(); i++)
     	{
     		if(numeri.get(i) == 0)
