@@ -28,5 +28,41 @@ public class graficiController {
   	  stage.close();
 
     }
+    
+    double puntoY()
+    {
+    	double y = 0;
+    	
+    	
+    	return y;
+    }
+    
+    double valoreNumeratore(double x)
+    {
+    	Double numeratore = null;
+    	
+    	for(int i = 0; i < MemoriaComune.zeri.size(); i++)
+    	{
+    		if(MemoriaComune.zeri.get(i) == 0)
+    		{
+    			numeratore = x;
+    		}
+    		else
+    		{
+    			
+    		}
+    	}
+    	
+    	
+    	return numeratore;
+    }
+    
+    double valoreDenominatore()
+    {
+    	double denominatore = 0;
+    	
+    	
+    	return denominatore;
+    }
 
 }
