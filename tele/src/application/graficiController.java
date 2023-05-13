@@ -1,6 +1,8 @@
 package application;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -32,29 +34,38 @@ public class graficiController {
     double puntoY()
     {
     	double y = 0;
+    	double x = 0;
+    	y = Math.log(MemoriaComune.guadagno)*(valoreCalcolato(x, MemoriaComune.zeri)/ valoreCalcolato(x, MemoriaComune.poli));
+    	
     	
     	
     	return y;
     }
     
-    double valoreCalcolato(double x)
+    double valoreCalcolato(double x, ArrayList<Double> numeri)
     {
     	Double numeratore = null;
     	
-    	for(int i = 0; i < MemoriaComune.zeri.size(); i++)
+    	numeratore = numeri.get(0);
+    	
+    	for(int i = 1; i < numeri.size(); i++)
     	{
-    		if(MemoriaComune.zeri.get(i) == 0)
+    		if(numeri.get(i) == 0)
     		{
-    			numeratore = x;
+    			numeratore = numeratore * x;
     		}
     		else
     		{
-    			
+    			numeratore = numeratore * calcolaReciproco(numeri.get(i), x);
     		}
     	}
-    	
-    	
     	return numeratore;
+    }
+    
+    double calcolaReciproco(double valore, double x)
+    {
+    	Double reciproco = 1/valore;
+    	return reciproco*x+1;
     }
 
 }
