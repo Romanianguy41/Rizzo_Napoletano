@@ -15,7 +15,7 @@
           <CategoryAxis side="BOTTOM" />
         </xAxis>
         <yAxis>
-          <NumberAxis side="LEFT" />
+          <NumberAxis prefHeight="647.0" prefWidth="28.0" side="LEFT" />
         </yAxis>
       </LineChart>
       <Text layoutX="427.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FASE" wrappingWidth="120.044921875">
@@ -36,10 +36,12 @@
             <Font name="System Bold Italic" size="50.0" />
          </font>
       </Text>
+      <NumberAxis layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="0.0" side="LEFT" />
       <Button fx:id="back" layoutX="1658.0" layoutY="917.0" mnemonicParsing="false" onAction="#back" text="BACK">
          <font>
             <Font name="System Italic" size="60.0" />
          </font>
       </Button>
+      <Button fx:id="btnCalcola" layoutX="177.0" layoutY="956.0" mnemonicParsing="false" onAction="#calcola" prefHeight="73.0" prefWidth="288.0" text="CALCOLA" />
    </children>
 </AnchorPane>
