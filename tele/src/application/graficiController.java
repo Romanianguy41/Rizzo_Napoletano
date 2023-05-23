@@ -24,43 +24,12 @@ public class graficiController {
     private LineChart<?, ?> graficoModulo;
 
     @FXML
-    void back(ActionEvent event) throws IOException {
+    void back(ActionEvent event) throws IOException 
+    {
     
   	  stage = (Stage)((Node)event.getSource()).getScene().getWindow();
   	  stage.close();
 
-    }
-    
-    double puntoY(double x)
-    {
-    	double y = 0;
-    	y = Math.log(MemoriaComune.guadagno)*(valoreCalcolato(x, MemoriaComune.zeri) 
-    			/ valoreCalcolato(x, MemoriaComune.poli));
-    	return y;
-    }
-    
-    double valoreCalcolato(double x, ArrayList<Double> numeri)
-    {
-    	Double numeratore = null;
-    	numeratore = calcolaReciproco(numeri.get(0), x);
-    	for(int i = 1; i < numeri.size(); i++)
-    	{
-    		if(numeri.get(i) == 0)
-    		{
-    			numeratore = numeratore * x;
-    		}
-    		else
-    		{
-    			numeratore = numeratore * calcolaReciproco(numeri.get(i), x);
-    		}
-    	}
-    	return numeratore;
-    }
-    
-    double calcolaReciproco(double valore, double x)
-    {
-    	Double reciproco = 1/valore;
-    	return reciproco*x+1;
     }
 
 }
